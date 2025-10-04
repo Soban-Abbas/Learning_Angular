@@ -102,4 +102,63 @@ checkbox:boolean=false;
 
 color:string='Pink';
 
+
+
+
+
+
+
+
+
+studenslist:any[]=[
+ {
+    id: 101,
+    name: "Alice Smith",
+    age: 20,
+    marks:45,
+    major: "Computer Science",
+    isActive:true
+  },
+  {
+    id: 102,
+    name: "Bob Johnson",
+    age: 21,
+      marks:41,
+    major: "Electrical Engineering",
+     isActive:false
+  },
+  {
+    id: 103,
+    name: "Charlie Brown",
+    age: 19,
+      marks:35,
+    major: "Psychology",
+     isActive:false
+  },
+  {
+    id: 104,
+    name: "Diana Prince",
+    age: 22,
+      marks:85,
+    major: "History",
+     isActive:true
+  },
+  {
+    id: 105,
+    name: "Eve Adams",
+    age: 20,
+      marks:71,
+    major: "Biology",
+     isActive:false
+  }
+];
+
+
+
+
+
+
+
+
+
 }

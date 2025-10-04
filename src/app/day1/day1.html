@@ -7,13 +7,16 @@
 <img [src]="url" alt="img">
 <img [src]="imgurl" alt="angular ">
 <h3 class="font-medium">Event Binding</h3>
-<button (click)="increasecount()" class="border-2  bg-blue-500 hover:bg-green-500 m-2 p-2 rounded-2xl cursor-pointer"> increase</button>
+<button (click)="increasecount()" class="border-2  bg-blue-500 hover:bg-green-500 m-2 p-2 rounded-2xl cursor-pointer">
+    increase</button>
 <h3 class="p-2 m-2 font-black text-green-600">{{count}}</h3>
 
 
 <h3 class="font-extrabold">Two way Binding</h3>
-<input  class="block w-1/4 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" type="text" [(ngModel)]="message" placeholder="type message">
-<p  >{{message}}</p>
+<input
+    class="block w-1/4 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+    type="text" [(ngModel)]="message" placeholder="type message">
+<p>{{message}}</p>
 
 <!-- to use [(ngModel)] we must import FormsModule into our ts file becase ngmodel is not html thing and not any of ts varibale its angilar feature an angular not give by default to keep out app light weight so it form releted thing becasue we  use form  to send data from html to ts so we need to import FormsModule from @angular/forms  -->
 
@@ -21,94 +24,111 @@
 <h3 class="font-bold">Directives</h3>
 <h3>*ngif</h3>
 <div *ngIf="showdiv" class="bg-amber-400 size-96">
-   
+
 </div>
- <button class="bg-green-500 p-2 m-4 rounded-2xl cursor-pointer  text-white hover:bg-blue-400" (click)="show()">Hide/Show</button>
+<button class="bg-green-500 p-2 m-4 rounded-2xl cursor-pointer  text-white hover:bg-blue-400"
+    (click)="show()">Hide/Show</button>
 
 
- <div class="bg-green-400 size-56" *ngIf="num1==num2" ></div>
- <input class="border border-gray-300 rounded-md mt-2 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" [(ngModel)]="num1" placeholder="num1">
- <input  class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ml-2" type="text" [(ngModel)]="num2" placeholder="num2">
-
-
-
-
-
- <!-- *ngfor   it only work with array  and it is similiar to for of loop in js  and we run *ngFor loop on that element which we wanna repeate like we want to create list we loop *ngFor on 1st li and dynamically we get that li for all array element -->
+<div class="bg-green-400 size-56" *ngIf="num1==num2"></div>
+<input class="border border-gray-300 rounded-md mt-2 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    type="text" [(ngModel)]="num1" placeholder="num1">
+<input class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ml-2"
+    type="text" [(ngModel)]="num2" placeholder="num2">
 
 
 
 
- <ul>
+
+<!-- *ngfor   it only work with array  and it is similiar to for of loop in js  and we run *ngFor loop on that element which we wanna repeate like we want to create list we loop *ngFor on 1st li and dynamically we get that li for all array element -->
+
+
+
+
+<ul>
     <li *ngFor="let city of city">{{city}}</li>
- </ul>
- <select class="block w-1/4 bg-white border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+</ul>
+<select
+    class="block w-1/4 bg-white border border-gray-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
     <option *ngFor="let city of city">{{city}}</option>
- </select>
+</select>
 
 
- <select >
-    <option >Choose</option>
+<select>
+    <option>Choose</option>
     <option *ngFor="let student of studentarray" [value]="student.id">{{student.name}}</option>
- </select>
+</select>
 <div class="overflow-x-auto">
-  <table class="min-w-full bg-white  border border-gray-200">
-    <thead>
-      <tr>
-        <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
-          Sr.NO
-        </th>
-        <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
-          Roll No
-        </th>
-        <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
-          Name
-        </th>
-        <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
-          Age
-        </th>
-        <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
-          Major
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let stud of studentarray;let Sr_no=index">
-        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{Sr_no+1}}</td>
-        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.id}}</td>
-        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.name}}</td>
-        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.age}}</td>
-        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.major}}</td>
-      </tr>
-      
-    </tbody>
-  </table>
+    <table class="min-w-full bg-white  border border-gray-200">
+        <thead>
+            <tr>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    Sr.NO
+                </th>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    Roll No
+                </th>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    Name
+                </th>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    Age
+                </th>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    Major
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let stud of studentarray;let Sr_no=index">
+                <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{Sr_no+1}}</td>
+                <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.id}}</td>
+                <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.name}}</td>
+                <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.age}}</td>
+                <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.major}}</td>
+            </tr>
+
+        </tbody>
+    </table>
 </div>
 
 
-<div  class="flex justify-center mt-5">
+<div class="flex justify-center mt-5">
     <div class="bg-amber-400 size-32" [ngClass]="divcolorchange">
 
     </div>
-    <button class="bg-green-500 hover:bg-blue-300 text-white size-fit m-3 p-3 rounded-2xl cursor-pointer " (click)="changecolor()">Change Color</button>
+    <button class="bg-green-500 hover:bg-blue-300 text-white size-fit m-3 p-3 rounded-2xl cursor-pointer "
+        (click)="changecolor()">Change Color</button>
 </div>
 
 <!-- ngclass using ternary operator -->
- 
 
-<div  class="flex justify-center mt-5">
-    <div [ngClass]="isdivngclass ? 'bg-gradient-to-tl from-green-400 to bg-blue-500 size-48': 'bg-gradient-to-tl from-yellow-400 to bg-red-500 size-48' ">
+
+<div class="flex justify-center mt-5">
+    <div
+        [ngClass]="isdivngclass ? 'bg-gradient-to-tl from-green-400 to bg-blue-500 size-48': 'bg-gradient-to-tl from-yellow-400 to bg-red-500 size-48' ">
 
     </div>
-    <button class="bg-green-500 hover:bg-blue-300 text-white size-fit m-3 p-3 rounded-2xl cursor-pointer " (click)="changedivcolor()">Change Color</button>
+    <button class="bg-green-500 hover:bg-blue-300 text-white size-fit m-3 p-3 rounded-2xl cursor-pointer "
+        (click)="changedivcolor()">Change Color</button>
 </div>
 
 <!-- using [ngclass ] with condtion aby comparing two input values -->
-<div  [ngClass]="num_a==num_b?' bg-gradient-to-tl from-yellow-400 to bg-red-500 size-48 ' :' bg-gradient-to-tl from-green-400 to bg-blue-500 size-48' ">
+<div
+    [ngClass]="num_a==num_b?' bg-gradient-to-tl from-yellow-400 to bg-red-500 size-48 ' :' bg-gradient-to-tl from-green-400 to bg-blue-500 size-48' ">
 
 </div>
-<input class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" type="text" [(ngModel)]="num_a" placeholder="num">
-<input  class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" type="text" [(ngModel)]="num_b" placeholder="num">
+<input
+    class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+    type="text" [(ngModel)]="num_a" placeholder="num">
+<input
+    class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+    type="text" [(ngModel)]="num_b" placeholder="num">
 
 
 
@@ -116,11 +136,12 @@
 
 
 
-<div  [ngClass]="checkbox? 'bg-gradient-to-tr from-yellow-300 to bg-red-700 size-48':'bg-gradient-to-t from-green-400 to-blue-400 size-48' ">
+<div
+    [ngClass]="checkbox? 'bg-gradient-to-tr from-yellow-300 to bg-red-700 size-48':'bg-gradient-to-t from-green-400 to-blue-400 size-48' ">
 
 </div>
 
-<input  type="checkbox" [(ngModel)]="checkbox" >
+<input type="checkbox" [(ngModel)]="checkbox">
 
 
 
@@ -133,3 +154,69 @@
     <option>Pink</option>
     <option>Blue</option>
 </select>
+
+
+
+<!-- ngstyle -->
+
+<div class="overflow-x-auto">
+    <table class="min-w-full bg-white  border border-gray-200">
+        <thead>
+            <tr>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    Sr.NO
+                </th>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    Roll No
+                </th>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    Name
+                </th>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    Marks
+                </th>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    Age
+                </th>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    Major
+                </th>
+                <th
+                    class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                    status
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let stud of studenslist;let Sr_no=index">
+                <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{Sr_no+1}}</td>
+                <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.id}}</td>
+                <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.name}}</td>
+                <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">
+                    
+  <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+    <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" [ngStyle]="{'width':stud.marks+'%' }"> {{stud.marks}}%</div>
+  </div>
+
+                    
+                    
+                    
+                    </td>
+                <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.age}}</td>
+                <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">{{stud.major}}</td>
+                <td [ngStyle]="{'background-color':stud.isActive?'green':'red' }" class="py-2 px-4 border-b border-gray-200 text-sm text-white">{{stud.isActive?'Active':'De-Active'}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<!-- if we have a veriable and it contain css we can direcrly apply that css into our elemet by doing [ngstyle]="veriablename"  this is usefull when we have css in api that we need to apply-->
