@@ -71,9 +71,24 @@ studentarray:any[]=[
 ];
 
 
+divcolorchange:string='';
+changecolor(){
+  if(this.divcolorchange==''){
+this.divcolorchange="bg-pink-900 size-60";
+  }else{
+    this.divcolorchange='';
+  }
 
 
+  
+   
+  
+}
 
 
+isdivngclass:boolean=false;
+changedivcolor(){
+this.isdivngclass=!this.isdivngclass;
+}
 
 }

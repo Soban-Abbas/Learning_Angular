@@ -52,7 +52,7 @@
     <option *ngFor="let student of studentarray" [value]="student.id">{{student.name}}</option>
  </select>
 <div class="overflow-x-auto">
-  <table class="min-w-full bg-white border border-gray-200">
+  <table class="min-w-full bg-white  border border-gray-200">
     <thead>
       <tr>
         <th class="py-2 px-4 border-b border-gray-200 bg-gray-100 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
@@ -84,4 +84,26 @@
     </tbody>
   </table>
 </div>
+
+
+<div  class="flex justify-center mt-5">
+    <div class="bg-amber-400 size-32" [ngClass]="divcolorchange">
+
+    </div>
+    <button class="bg-green-500 hover:bg-blue-300 text-white size-fit m-3 p-3 rounded-2xl cursor-pointer " (click)="changecolor()">Change Color</button>
+</div>
+
+<!-- ngclass using ternary operator -->
+ 
+
+<div  class="flex justify-center mt-5">
+    <div [ngClass]="isdivngclass ? 'bg-gradient-to-tl from-green-400 to bg-blue-500 size-48': 'bg-gradient-to-tl from-yellow-400 to bg-red-500 size-48' ">
+
+    </div>
+    <button class="bg-green-500 hover:bg-blue-300 text-white size-fit m-3 p-3 rounded-2xl cursor-pointer " (click)="changedivcolor()">Change Color</button>
+</div>
+
+
+
+
 
