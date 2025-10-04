@@ -103,7 +103,33 @@
     <button class="bg-green-500 hover:bg-blue-300 text-white size-fit m-3 p-3 rounded-2xl cursor-pointer " (click)="changedivcolor()">Change Color</button>
 </div>
 
+<!-- using [ngclass ] with condtion aby comparing two input values -->
+<div  [ngClass]="num_a==num_b?' bg-gradient-to-tl from-yellow-400 to bg-red-500 size-48 ' :' bg-gradient-to-tl from-green-400 to bg-blue-500 size-48' ">
+
+</div>
+<input class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" type="text" [(ngModel)]="num_a" placeholder="num">
+<input  class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" type="text" [(ngModel)]="num_b" placeholder="num">
 
 
 
 
+
+
+
+<div  [ngClass]="checkbox? 'bg-gradient-to-tr from-yellow-300 to bg-red-700 size-48':'bg-gradient-to-t from-green-400 to-blue-400 size-48' ">
+
+</div>
+
+<input  type="checkbox" [(ngModel)]="checkbox" >
+
+
+
+
+<div [ngClass]="color=='Pink'?'bg-pink-600 size-48':'bg-blue-500 size-48' ">
+
+</div>
+
+<select [(ngModel)]="color">
+    <option>Pink</option>
+    <option>Blue</option>
+</select>

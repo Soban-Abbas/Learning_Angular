@@ -91,4 +91,15 @@ changedivcolor(){
 this.isdivngclass=!this.isdivngclass;
 }
 
+
+
+num_a:string='';
+num_b:string='';
+
+
+checkbox:boolean=false;
+
+
+color:string='Pink';
+
 }
