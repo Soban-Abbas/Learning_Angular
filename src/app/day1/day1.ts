@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 @Component({
   selector: 'app-day1',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './day1.html',
   styleUrl: './day1.css'
 })
@@ -18,6 +19,61 @@ increasecount(){
 }
 
 message='';
+
+
+
+
+//ngif
+showdiv:boolean=true;
+show(){
+  this.showdiv=!this.showdiv;
+}
+
+
+num1:string='';
+num2:string='';
+
+
+city=["ISB","KARACHI","LAHORE","PESHAWAR"];
+
+
+studentarray:any[]=[
+ {
+    id: 101,
+    name: "Alice Smith",
+    age: 20,
+    major: "Computer Science"
+  },
+  {
+    id: 102,
+    name: "Bob Johnson",
+    age: 21,
+    major: "Electrical Engineering"
+  },
+  {
+    id: 103,
+    name: "Charlie Brown",
+    age: 19,
+    major: "Psychology"
+  },
+  {
+    id: 104,
+    name: "Diana Prince",
+    age: 22,
+    major: "History"
+  },
+  {
+    id: 105,
+    name: "Eve Adams",
+    age: 20,
+    major: "Biology"
+  }
+];
+
+
+
+
+
 
 
 }
