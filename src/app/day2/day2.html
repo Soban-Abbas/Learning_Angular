@@ -1,1 +1,58 @@
-<p>day2 works!</p>
+
+
+  <form class="bg-white p-8 rounded-2xl shadow-md w-full max-w-md space-y-5">
+
+    <h2 class="text-2xl font-semibold text-center text-blue-600">User Registration</h2>
+
+    <!-- Name -->
+    <div>
+      <label for="name" class="block text-gray-700 font-medium mb-1">Full Name</label>
+      <input id="name" name="fullname" type="text" placeholder="Enter your name" [(ngModel)]="userreg.fullname"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email" class="block text-gray-700 font-medium mb-1">Email Address</label>
+
+      <input id="email" [(ngModel)]="userreg.email"   name="email" type="email" placeholder="Enter your email"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+
+    <!-- Phone -->
+    <div>
+      <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
+      <input id="phone" name="phonenumber" type="tel" [(ngModel)]="userreg.phonenumber"   placeholder="03xx-xxxxxxx"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+
+    <!-- City -->
+    <div>
+      <label for="city" class="block text-gray-700 font-medium mb-1">City</label>
+  
+      <input id="city" name="city" type="text" [(ngModel)]="userreg.city"   placeholder="Enter your city"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+
+    <!-- ZIP -->
+    <div>
+      <label for="zip" class="block text-gray-700 font-medium mb-1">ZIP Code</label>
+      <input id="zip" name="zip" type="text" placeholder="e.g. 44000" [(ngModel)]="userreg.zip"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+
+    <!-- Radio Button -->
+    <div class="flex items-center space-x-2">
+      <input id="terms" name="isacceptTerms" type="radio" [(ngModel)]="userreg.isacceptTerms"
+        class="text-blue-500 focus:ring-blue-400 focus:ring-2">
+      <label for="terms" class="text-gray-700">I accept the terms and conditions</label>
+    </div>
+
+    <!-- Submit Button -->
+    <button (click)="onsubmit()" type="submit"
+      class="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-200">
+      Submit
+    </button>
+
+  </form>
+<h1>{{details|json}}</h1>
