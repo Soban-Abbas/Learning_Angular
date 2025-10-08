@@ -1,14 +1,27 @@
 
 
-  <form class="bg-white p-8 rounded-2xl shadow-md w-full max-w-md space-y-5">
+  <form class="bg-white p-8 rounded-2xl shadow-md w-full max-w-md space-y-5" #myform="ngForm">
 
     <h2 class="text-2xl font-semibold text-center text-blue-600">User Registration</h2>
 
     <!-- Name -->
+     
+
     <div>
-      <label for="name" class="block text-gray-700 font-medium mb-1">Full Name</label>
-      <input id="name" name="fullname" type="text" placeholder="Enter your name" [(ngModel)]="userreg.fullname"
+      <label for="name" class="block text-gray-700 font-medium mb-1">Full Name
+        @if (fname.touched && fname.errors?.["required"]) {
+            <span class="text-red-600">*</span>
+            
+        }
+      
+      </label>
+      
+      <input id="name" #fname="ngModel" minlength="5" name="fullname" type="text" placeholder="Enter your name" [(ngModel)]="userreg.fullname" required
         class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        @if ( fname.errors?.["minlength"]) {
+          <br><span class="text-red-600">Minimum 5 character</span>
+        }
+       
     </div>
 
     <!-- Email -->
@@ -47,12 +60,11 @@
         class="text-blue-500 focus:ring-blue-400 focus:ring-2">
       <label for="terms" class="text-gray-700">I accept the terms and conditions</label>
     </div>
-
     <!-- Submit Button -->
-    <button (click)="onsubmit()" type="submit"
-      class="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-200">
+    <button [disabled]="myform.invalid" (click)="onsubmit()" type="submit" 
+      class="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 cursor-pointer  disabled:cursor-not-allowed  transition duration-200">
       Submit
     </button>
 
   </form>
-<h1>{{details|json}}</h1>
+<h1>{{myform.invalid}}</h1>
