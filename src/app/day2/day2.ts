@@ -1,10 +1,10 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-day2',
-  imports: [FormsModule,JsonPipe],
+  imports: [FormsModule,JsonPipe,ReactiveFormsModule],
   templateUrl: './day2.html',
   styleUrl: './day2.css'
 })
@@ -24,4 +24,28 @@ onsubmit(){
   debugger;
 this.details=this.userreg;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
